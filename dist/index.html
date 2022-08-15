@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>CARDS</title>
+</head>
+
+<body>
+    <header class="header-bg">
+        <nav class="nav-header">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <a class="logo"><img
+                            src="https://www.who.int/images/default-source/infographics/who-emblem.png?  sfvrsn=877bb56a_2"
+                            alt=""></a>
+                    <p class="logo-name"> DAN.IT Health Organization</p>
+                </div>
+                <a class="log-in-btn"><span class="log-in"> Log in </span></a>
+                <div class="welcome disActivated"></div>
+                <div class="black_back">
+                    <div class="login-popup">
+                        <a class="js-modal-head"><img width="35px"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXlY9LX-DeiAsGRMtm3qORPvue0530zBDYrQ&usqp=CAU"
+                                alt="img"></a>
+                        <p class="popup-text">Log in, please. Than you can create visit.</p>
+                        <label for="email">Enter email</label>
+                        <input type="text" class="js-email-input" name="email">
+                        <label for="password">Enter password</label>
+                        <input type="text" class="js-password-input" name="password">
+                        <button type="submit" class="js-login-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container under-head">
+            <p class="head-words">Welcome to our <span> Third project!</span></p>
+            <p class="head-words">Please, Test Our Possibilities)</p>
+        </div>
+    </header>
+    <main class="create-area">
+        <div class="container">
+            <a class="create-visit"><span class="logo-name">Create Visit</span></a>
+            <p class="no-items">No items have been added</p>
+            <div class="filter">
+                <ul>
+                    <!--filter-->
+                    <span class="filter-logo">Filter:</span>
+                    <li><span> By name </span><input class="js-name-filter" type="text"></li>
+                    <li><span>By doctor </span><select class="js-doctor-filter" name="select">
+                            <option value="value1" selected>All</option>
+                            <option value="value2">Cardiologist</option>
+                            <option value="value3">Dentist</option>
+                            <option value="value4">Therapist</option>
+                        </select></li>
+                    <span> By urgency </span><select class="js-urgency-filter" name="select">
+                            <option value="value1" selected>All</option>
+                            <option value="value2">Regular</option>
+                            <option value="value3">Priority</option>
+                            <option value="value4">Urgent</option>
+                        </select>
+                    <span> By status </span><select class="js-status-filter" name="select">
+                            <option value="value1" selected>All</option>
+                            <option value="value2">Open</option>
+                            <option value="value3">Done</option>
+                        </select>
+                </ul>
+            </div>
+            <div class="black_back"></div>
+            <form method="post" class="create-card-modal">
+                <a class="delete-modal"><img width="35px"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXlY9LX-DeiAsGRMtm3qORPvue0530zBDYrQ&usqp=CAU"
+                        alt="img"></a>
+                <p class="select-doctor"><span>Choose a doctor: </span><select class="selectDoctor" name="select">
+                        <option>- -</option>
+                        <option value="Cardiologist">Cardiologist</option>
+                        <option value="Dentist">Dentist</option>
+                        <option value="Therapist">Therapist</option>
+                    </select></p>
+                <p class="select-doctor"><span>Full name of a doctor: <input type="text"
+                            class="js-doctor-full-name-input" name="email"></span></p>
+
+                <p class="select-doctor"><span>Purpose: <input type="text" class="js-doctor-purpose-input"
+                            name="email"></span></p>
+
+                <p class="select-doctor"><span>Urgency: </span><select name="select" class="js-doctor-urgency-input">
+                        <option value="value1" selected>Regular</option>
+                        <option value="value2">Priority</option>
+                        <option value="value3">Urgent</option>
+                    </select></p>
+                <p class="select-doctor"><span>Brief description of the visit:</span><textarea name="" id="" cols="30"
+                        rows="4" class="js-doctor-description-input"></textarea></p>
+
+                <div class="js-selected-doctor" style="visibility: hidden;"></div>
+                <div class="js-selected-doctor">
+                    <p class="select-doctor"><span>Normal pressure: </span><input type="text"
+                            class="js-email-input js-pressure-input" name="pressure"></p>
+                    <p class="select-doctor"><span>Body mass index: </span><input type="text"
+                            class="js-email-input js-bmi-input" name="bodyMassIndex"></p>
+                    <p class="select-doctor"><span>Past diseases of the cardiovascular system: </span><textarea
+                            class="js-diseases-input" name="diseases" id="" cols="30" rows="4"></textarea></p>
+                    <p class="select-doctor"><span>Age: </span><input type="text"
+                            class="js-email-input js-age-for-cardiologist-input" name="age"></p>
+                </div>
+                <div class="js-selected-doctor">
+                    <p class="select-doctor"><span>date of last visit: </span><input type="text"
+                            class="js-email-input js-last-visit-input" name="lastVisitDate"></p>
+                </div>
+                <div class="js-selected-doctor">
+                    <p class="select-doctor"><span>Age: </span><input type="text"
+                            class="js-email-input js-age-for-therapist-input" name="age">
+                    </p>
+                </div>
+                <a class="create-visit modal-add-visit js-submit"><span class="logo-name">Add Visit</span></a>
+
+            </form>
+    </main>
+
+
+    <div class="VisitCards"></div>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">
+                All Rights Reserved © 2021 / Authors: Alexey Koshelivskiy, Sergey Prymakov, Davyd Kolesnyk. Our Project:
+                <a href="https://gitlab.com/avk.me/step-project-cards"> <img width="35px"
+                        src="https://seeklogo.com/images/G/gitlab-logo-757620E430-seeklogo.com.png" alt=""></a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/script.min.js"></script>
+
+</body>
+
+</html>

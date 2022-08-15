@@ -1,0 +1,36 @@
+HTML:	
+1) Header, LogIn
+“No items have been added”
+2) “LogIn” clicked  -> “Created” appeared.
+3) “Create” clicked -> “No items..” - display: none, “Modal” active
+“x” or “ “ click -> “Modal” delete, “No items… “ active.
+4) “Modal” submitted -> “Modal” delete, “Visit” renders. Filtration form created
+
+Server:
+1) Class User + several instances “registered users”. usersList.
+2) Class Visit + visitsList
+3) Subclasses + subClassLists
+4) Four controllers:
+-	“GET” for users
+-	“POST” for visits
+-	“DELETE” for visits
+-	“PATCH” for visits
+
+Client js:
+1) Login function.
+2) Class Visit : 
+-	constuctor(properties)
+-	render() // basic info about visit
+-	delete()
+3) Subclasses – VisitDentist, VisitCardiologist, VisitTherapist:
+-	Constructor(properties){
+        Super();
+        this.properties;
+        }
+-	renderSpecifics();// detailed info about visit
+-	edit();
+4) Class Modal
+– render();
+-	close();
+5) Filtration.
+

@@ -1,0 +1,439 @@
+//--///////////
+//Sergey Prymakov
+
+@import "reset";
+
+$wt:white;
+$bl:#008ece;
+$gr: #32b76c;
+$rd:#f26065;
+$tr:0.4s;
+
+@mixin bor($px, $cl, $bs, $br) {
+    border: $px $cl $bs; //$px-pixel,$cl-color,$bs-border_style
+    border-radius: $br; // border-radius
+}
+
+@mixin mod ($bg, $pz, $tp, $lt, $rt, $t-a, $z-i) {
+    background-color: $bg;
+    position: $pz;
+    top: $tp;
+    left: $lt;
+    right: $rt;
+    text-align: $t-a;
+    z-index: $z-i;
+}
+
+.login-popup {
+    @include mod($wt, fixed, 100px, 40%, 0, center, 3);
+    @include bor(5px, $bl, solid, 15px);
+    padding: 0px 30px;
+    width: 300px;
+
+    .popup-text {
+        margin-top: 40px;
+        color: $rd;
+    }
+
+    label {
+        display: block;
+        padding: 15px 0;
+        color: $bl;
+        font-size: 18px;
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        background-color: $bl;
+        color: $wt;
+        padding: 6px;
+        appearance: none;
+        border: 0;
+        border-radius: 5px;
+        padding: 8px 16px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: $tr;
+    }
+
+    button:hover {
+        background-color: $wt;
+        color: $bl;
+        @include bor(1px, $bl, solid, 5px);
+        padding: 9px 18px;
+    }
+
+    a {
+        position: absolute;
+        right: 0;
+    }
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-wrapper {
+    display: flex;
+}
+
+a {
+    color: $wt;
+    text-decoration: none
+}
+
+.header-bg {
+    background-image: url("https://msk.ramsaydiagnostics.ru/blog/wp-content/uploads/2019/12/cover-not-afraid-doctors.png");
+    height: 600px;
+    background-size: cover;
+    width: 100%;
+}
+
+.nav-header {
+    max-width: 100%;
+    background-color: #00000070;
+    height: 120px;
+}
+
+.js-modal-head {
+    img {
+        padding: 5px;
+    }
+}
+
+.logo {
+    display: inline-block;
+    padding: 10px 0 10px 0;
+
+    img {
+        max-width: 100px;
+    }
+}
+
+.logo-name {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    color: $bl;
+    cursor: pointer;
+}
+
+.under-head {
+    padding-top: 140px;
+    display: block;
+    color: $wt;
+
+    .head-words {
+        font-size: 28px;
+        padding-bottom: 5px;
+    }
+
+    .head-words:nth-child(2) {
+        font-size: 22px;
+    }
+}
+
+.log-in {
+    font-size: 16px;
+    padding: 15px;
+    background-color: $bl;
+    border-radius: 10px;
+    transition: $tr;
+    text-transform: uppercase;
+}
+
+.log-in:hover {
+    padding: 18px;
+    background-color: $wt;
+    color: $bl;
+    border: 1px solid $bl;
+}
+
+.log-in-btn {
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+
+.create-area {
+    border-top: 20px solid $bl;
+    height: 200px;
+}
+
+.create-visit {
+    span {
+        display: block;
+        background-color: $gr;
+        padding: 30px;
+        color: $wt;
+        border-radius: 10px;
+        margin-top: 20px;
+        transition: $tr;
+    }
+
+    span:hover {
+        color: $gr;
+        background-color: $wt;
+        border: 1px solid $gr;
+        padding: 32px;
+    }
+}
+
+.no-items {
+    color: $bl;
+    font-size: 30px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.black_back {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000070;
+    z-index: 2;
+}
+.delete-modal{
+    cursor: pointer;
+}
+
+.create-card-modal {
+    display: none;
+    position: relative;
+    padding-bottom: 100px;
+    @include bor(5px, $gr, solid, 15px);
+    @include mod($wt, fixed, 30px, 33%, 33%, start, 3);
+    width: 500px;
+    a {
+        position: absolute;
+        right: 0;
+
+        img {
+            padding: 5px;
+        }
+    }
+}
+
+////////////////Filter//////////////
+.filter{
+    display: none;
+    padding-top: 20px;
+    span{
+        color: $bl;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    ul{
+        @include bor(5px, $rd, solid, 15px);
+        padding: 20px;
+        li{
+            display: block;
+            padding-left: 10px;
+        }
+        .filter-logo{
+            color:$rd;
+            font-size: 24px;
+
+        }
+    }
+
+}
+
+.select-doctor {
+    padding: 15px 0px 0px 50px;
+    color: $bl;
+
+    span {
+        display: inline-block;
+        padding-right: 5px;
+        font-size: 20px;
+    }
+    textarea{
+        margin-top: 5px;
+    }
+}
+
+.js-selected-doctor{
+    display: none; 
+    :last-child{
+        padding-bottom: 10px;
+    }
+}
+
+
+.modal-add-visit{
+    position: absolute;
+    bottom: 5px;
+    margin-right:33%;
+}
+
+.VisitCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    max-width: 1200px;
+    margin: 0px auto;
+    gap: 2em;
+}
+
+.Visit-Card{
+    position: relative;
+    @include bor(5px, $gr, solid, 15px);
+    color: $bl;
+    .delete-modal{
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        img{
+            padding: 5px;
+        }
+    }
+}
+
+.visit-list{
+    padding-top: 25px;
+    li{
+
+        font-weight: 600;
+        font-size: 20px;
+        padding: 10px;
+        padding-left: 20px;
+        p{
+            color: $rd;
+            padding-top: 5px;
+        }
+        span{
+            color: $rd;      
+        }
+    }
+}
+
+.showMore{
+    cursor: pointer;
+    display: inline-block;
+    @include bor(2px, $gr, solid, 15px);
+    padding: 5px;
+    transition: 0.4s;
+}
+
+.showMore:hover{
+    background-color: $bl;
+    color: $wt;
+    border-color: $wt;
+}
+
+.visit-buttons{
+    display: flex;
+    a{
+        span {
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+            display: block;
+            background-color: $gr;
+            padding: 14px;
+            color: $wt;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: $tr;
+        }
+    
+        span:hover {
+            color: $wt;
+            background-color: $bl;
+            border: 1px solid $wt;
+            padding: 16px;
+        }
+    }
+}
+
+.done{
+    cursor: pointer;
+    color: white;
+    background-color: $bl;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: $bl;
+    margin-top: 60px;
+}
+
+.footer-text{
+    position: relative;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 30px;
+    color: $wt;
+    text-align: center;
+}
+
+.show-more-btn{
+    margin-left: 20px;
+}
+
+.check{
+    display: inline-block;
+    font-size: 20px;
+    color:$bl;
+    padding-left: 50px;
+    transition: $tr;    
+}
+.check:hover{
+    color:$rd
+}
+
+//Sergey Prymakov
+
+//Alexey Koshelivskiy
+.welcome {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.login-popup,
+.disActivated{
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+// Davyd Kolesnyk
+
+
+.edit-btn-disabled, .show-more-disabled {
+    display: none;
+}
+
+.showMore-list {
+    display: none;
+}
+
+.showMore-list-active {
+    display: block;
+}
+
+
+
+//Alexey Koshelivskiy
+////////////--//
